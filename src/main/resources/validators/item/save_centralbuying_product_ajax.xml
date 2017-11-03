@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/item/centralbuying/save_ajax" allowExtra="true">
+    <parameters>
+        <parameter name="id" type="int" minValue="0" default="0"/>
+        <parameter name="eventId" type="int" minValue="0" default="0"/>
+        <parameter name="brandId" type="int" minValue="0" default="0" required="true"/>
+        <parameter name="productCode" type="html_string" minLength="0" maxLength="64" default="" required="true"/>
+        <parameter name="sellerId" type="int" minLength="0" maxLength="7" minValue="0" default="0" required="true"/>
+        <parameter name="discount" type="html_string" minLength="0" maxLength="10" default="0"/>
+        <parameter name="price" type="html_string" minLength="0" maxLength="10" default="0"/>
+        <parameter name="maxCountPrice" type="html_string" minLength="0" maxLength="10" default="0"/>
+        <parameter name="cost" type="html_string" minLength="0" maxLength="10" default="0"/>
+        <parameter name="stock" type="int" minValue="0" default="0"/>
+        <parameter name="memo" type="html_string" minLength="0" maxLength="64" default=""/>
+        <parameter name="leadtime" type="int" minValue="0" default="0"/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

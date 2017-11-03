@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/purchase/order/content/save_ajax" allowExtra="true">
+    <parameters>
+      <parameter name="id" type="int" minValue="0" default="0"/>
+        <parameter name="purchaseOrderId" type="int" minValue="0" default="0"/>
+        <parameter name="brandName" type="html_string" minLength="0" default="0" required="true"/>
+        <parameter name="productCode" type="html_string" minLength="0" maxLength="64" default="" required="true"/>
+        <parameter name="sellerId" type="int" minValue="0" default="0" required="false"/>
+        <parameter name="sellerName" type="html_string" default="0" required="true"/>
+        <parameter name="itemId" type="int" minValue="0"  default="0"/>
+        <parameter name="itemType" type="int" minValue="0" default="0"/>
+        <parameter name="cityId" type="int" minValue="1" default="0" required="true"/>
+        <parameter name="price" type="html_string" minLength="0" maxLength="10" default="0"/>
+        <parameter name="quantity" type="int" minValue="0" default="0"/>
+        <parameter name="leadTime" type="int"  minValue="0" default=""/>
+        <parameter name="realQuantity" type="int" minValue="0" default="0"/>
+        <parameter name="memo" type="html_string" minLength="0" maxLength="128" default=""/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

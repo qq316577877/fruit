@@ -1,0 +1,311 @@
+.containerDetails {
+    margin-left: 35px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#addreddInfo {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.containerAddress {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+#addreddInfo_2 {
+    color: #bcbcbc;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.containerInfo {
+    margin-top: 20px;
+}
+
+.containerTableHeader span {
+    margin-right: 80px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.containerTableHeader span input {
+    border: 1px solid #000;
+}
+
+.containerTableBody table {
+    width: 900px;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.containerTableBody table th,
+.containerTableBody table td {
+    width: 120px;
+    display: inline-block;
+    text-align: center;
+}
+
+.containerTableBody table thead,
+.containerTableBody table tr {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.containerTableBody table input {
+    width: 80px;
+    border: 1px solid #eee;
+}
+.clear{
+    clear: both;
+}
+.add-h-1 {
+    margin-left: 15px;
+}
+.loanMoney{
+    font-size: 18px;
+    display: inline-block;
+}
+.containerDetails input[type="button"]{
+    background: #00AA5C;
+    color: #fff;
+    padding: 5px;
+}
+.containerDetails .subBtn{
+    margin:40px auto;
+    margin-left: 300px;
+}
+.containerDetails .subBtn input{
+    width: 120px;
+    height: 30px;
+    padding: 0;!important;
+    line-height: 30px;
+}
+#containerIdList{
+    margin-left: 50px;
+    height: 30px;
+    margin-top: 10px;
+}
+#containerIdList li{
+    float: left;
+    height: 30px;
+    border: 1px solid #00AA5C;
+    padding: 5px;
+    cursor: pointer;
+    color: #00AA5C;
+}
+#tabledCreateCon  .in-2{
+    width: 150px;!important;
+}
+#tabledCreateCon .priceAll input{
+    background: #fff;
+    border: none;
+}
+#containerIdList .selectLi{
+    background: #00AA5C;
+    color: #fff;
+}
+#conMaks{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .5s;
+    background: rgba(0, 0, 0, .4);
+    z-index: 50;
+    display: none;
+}
+
+
+#inform_1 .inform-body .input-l{
+    float: left;
+}
+
+#inform_1 .save{
+    margin-left: 0px;
+}
+
+
+#inform2{
+    display: none;
+}
+#inform3{
+    display: none;
+}
+
+.inform-1{
+    display: none;
+}
+#inform4 {
+    width: 480px;
+    height: 300px;
+    top: 50%;
+}
+
+#save_4{
+    margin-left: 0px;
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+
+#inform_1 .inform-body{
+    padding: 32px 40px 10px 40px;
+}
+
+
+.mask>div:nth-of-type(1) .inform-body>div:nth-of-type(1){
+    /*width: 500px;*/
+}
+.mask>div:nth-of-type(1) .inform-body{
+    padding: 20px 40px 20px 40px;
+}
+.mask>div:nth-of-type(1) .save{
+    /*margin-left: -190px;*/
+    margin-top: 20px;
+}
+
+
+#select_list li{
+    height: 20px;
+    margin-left: -20px;
+}
+
+.lab-tel .input-l{
+    width: 110px;
+    text-align: right;
+}
+
+
+#addAdressCon .inform-body .lab label.error{
+    position: absolute;
+    left: 85px;
+    top: 37px;
+    font-size: 12px;
+    color:#ff4848;
+    font-weight: normal;
+}
+
+
+.lab-phone .input-l{
+    width: 110px;
+    text-align: right;
+}
+.lab-tel .input-l{
+    width: 110px;
+    text-align: right;
+}
+
+#addAdressCon select.error{
+    color: #000000;
+}
+#addAdressCon .inform-body>div:nth-of-type(1) .input-l{
+    width: 110px;
+    /*margin-left: -5px;*/
+}
+
+#addAdressCon input.error{
+    color: #666666;
+}
+#addAdressCon .inform-body{
+    text-align: left;
+}
+#addAdressCon .inform-body select {
+    float: left
+}
+#addAdressCon .selectList{
+    margin-left: -30px;
+}
+#addAdressCon .lab-tel .input-l {
+    width: 80px;
+    float: left;
+}
+#addAdressCon .lab-phone  .input-l {
+    width: 80px;
+    float: left;
+}
+#addAdressCon .inform-body .lab {
+    height: 40px;
+    position: relative;
+}
+#addAdressCon #saveAdressCon{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    height: 30px;
+}
+#addAdressCon .inform-body{
+    padding-top: 10px;
+    overflow: scroll;
+}
+#addAdressCon .inform-body .reminder{
+    padding-top: -15px;
+}
+
+#addressLists{
+    width: 500px;
+    min-height: 300px;
+    max-height: 300px;
+    overflow: auto;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -250px;
+    top:10%;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+#addressLists input{
+    margin-right: 20px;
+}
+
+.operteBtn input{
+    width: 80px;
+    height: 30px;
+    background: #00AA5C;
+    color: #fff;
+}
+
+.operteBtn{
+    text-align: center;
+    margin-top: 30px;
+}
+.moneyInfoTitle{
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-top: 10px;
+}
+.moneyInfoP span{
+    margin-right: 30px;
+    display: inline-block;
+}
+.moneyInfoP{
+    margin-bottom: 10px;
+}
+#thisConLoan{
+    border: 1px solid #e2e2e2;
+}
+#containerIdList li:hover{
+    transition: all .3s;
+    background: #00AA5C;
+    color: #fff;
+}
+.containerDetails input[type="button"]:hover{
+    transition: all .3s;
+    background: #10c471;
+}
+#container_info .containerTableBody .loanBtn:hover{
+    transition: all .3s;
+    background: #10c471;
+}
+
+
+
+
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2017-2022 by Ovfintech (Wuhan) Technology Co., Ltd.
+  ~ All right reserved.
+  -->
+
+<api name="/user/delivery_address/update_user_receive_address_ajax" allowExtra="true">
+    <parameters>
+        <parameter name="id" type="int" minValue="1" required="true"/>
+        <parameter name="orderNo" type="html_string" minLength="1" maxLength="64" required="true"/>
+        <parameter name="receiver" type="html_string" minLength="1" maxLength="32" required="true"/>
+        <parameter name="countryId" type="int" minValue="1" default="0" required="true"/>
+        <parameter name="provinceId" type="int" minValue="1" default="0" required="true"/>
+        <parameter name="cityId" type="int" minValue="1" default="0" required="true"/>
+        <parameter name="districtId" type="int" minValue="1" default="0" required="true"/>
+        <parameter name="address" type="html_string" minLength="1" maxLength="128" required="true"/>
+        <parameter name="zipCode" type="html_string" default="" maxLength="32" required="false"/>
+        <parameter name="cellPhone" type="html_string" default="" maxLength="32" required="false"/>
+        <parameter name="phoneNum" type="html_string" default="" maxLength="32" required="false"/>
+        <parameter name="selected" type="int" minValue="0" default="0" required="false"/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/user/save_brand_auth_ajax" allowExtra="true">
+    <parameters>
+        <parameter name="id" type="int" minValue="1" required="true"/>
+        <parameter name="brandId" type="int" minValue="1" required="true"/>
+        <parameter name="authorizationCode" type="html_string" minLength="1" maxLength="128" required="true"/>
+        <parameter name="authorizationPic" type="html_string" minLength="1" maxLength="128" required="true"/>
+        <parameter name="expireTime" type="html_string" minLength="1" maxLength="10" required="true"/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

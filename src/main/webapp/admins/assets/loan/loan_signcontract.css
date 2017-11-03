@@ -1,0 +1,59 @@
+#maskSign{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .5s;
+    background: rgba(0, 0, 0, .4);
+    z-index: 50;
+    display: none;
+}
+#pop{
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 30%;
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+}
+.userName{
+    display: inline-block;
+}
+.userInfo{
+    margin-top: 20px;
+}
+
+#header{
+    text-align: center;
+}
+
+#pdf1{
+    position: relative;
+    left: 50%;
+    margin-left: -350px;
+}
+
+#sub{
+    position: relative;
+    left: 50%;
+    margin-left: -60px;
+    top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/user/profile/save_nationalLogistics_info_ajax" allowExtra="true">
+	<parameters>
+        <parameter name="id" type="int" minValue="1" required="true"/>
+        <parameter name="edit_nationalLogistics" type="int" minValue="1" required="true"/>
+	</parameters>
+	<rules/>
+	<customValidators />
+</api>

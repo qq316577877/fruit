@@ -1,0 +1,426 @@
+/*main*/
+.line {
+    width: 100%;
+    height: 9px;
+    background: url("../img/line.png") no-repeat;
+    margin-bottom: 18px;
+}
+
+.main-l {
+    width: 180px;
+    height: 530px;
+    border: 1px solid #dddddd;
+    padding-top: 20px;
+    padding-left: 24px;
+    margin-right: 40px;
+}
+
+.main-l ul {
+    margin-bottom: 20px;
+}
+
+.main-l ul h2 {
+    font-size: 16px;
+    color: #333333;
+    font-weight: bold;
+    height: 40px;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+}
+
+.main-l ul li {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 16px;
+}
+
+.main-l ul li a {
+    font-size: 14px;
+    color: #666666;
+}
+
+.main-l > ul:nth-of-type(4) li:nth-of-type(1) a {
+    color: #00aa5c;
+}
+.main-r{
+    width: 1050px;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.main-r-t h2 {
+    font-size: 16px;
+    color: #333333;
+    margin-top: 0;
+    width: 104px;
+    padding-bottom: 8px;
+    /*border-bottom: 2px solid #00aa5c;*/
+    display: block;
+    z-index: 10;
+    margin-bottom: 0;
+}
+.main-r-t{
+    padding-bottom: 100px;
+}
+.numline{
+    position: relative;
+}
+.line-1 {
+    width: 104px;
+    height: 2px;
+    background: #00aa5c;
+    position: absolute;
+}
+.line-2{
+    width: 876px;
+    height: 2px;
+    background: #dddddd;
+    position: absolute;
+    left: 104px;
+}
+.main-l-t1{
+    padding-top: 40px;
+    padding-left: 144px;
+}
+.main-l-t1>div{
+    height: 36px;
+    width: 100%;
+    position: relative;
+    line-height: 36px;
+}
+.main-l-t1 i{
+    margin-left: 20px;
+}
+.skip{
+    font-size: 14px;
+    color: #00aa5c;
+    position: absolute;
+    left: 424px;
+}
+.main-r-b h2{
+    font-size: 16px;
+    color: #333333;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: block;
+    padding-bottom: 8px;
+}
+.main-info1{
+    width: 100%;
+    height: 64px;
+    /*line-height: 64px;*/
+    padding-left: 20px;
+    padding-right: 48px;
+    line-height: 64px;
+    border-bottom: 1px solid #dddddd;
+}
+.using{
+    width: 168px;
+    text-align: center;
+    height: 100%;
+    line-height: 15px;
+    margin-right: 60px;
+}
+.unable,.able{
+    width: 30px;
+    height: 26px;
+    background: url("../img/sprite.png") no-repeat -121px -117px;
+    display: block;
+    text-align: center;
+    margin-top: 19px;
+    margin-left: 44px;
+}
+.main-info1 .using span{
+    font-size: 14px;
+    color: #333333;
+    margin-left: 8px;
+    line-height: 64px;
+    font-weight: normal;
+
+}
+.main-info1>span{
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+    display: inline-block;
+    width: 160px;
+}
+.using-info{
+    font-size: 14px;
+    color: #999999;
+}
+.using-bind{
+    width: 80px;
+    height: 36px;
+    margin-right: 48px;
+    display: block;
+    border: 1px solid #00aa5c;
+    color: #00aa5c;
+    margin-top: 14px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 5px;
+}
+.using-bind:hover{
+    background: #00aa5c;
+    color: #ffffff;
+    transition: all .5s;
+}
+.able{
+    width: 30px;
+    height: 22px;
+    background: url("../img/sprite.png") no-repeat -121px -82px;
+}
+.account .skip:hover{
+    text-decoration: underline;
+    color: #00aa5c;
+}
+
+/*mask*/
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .5s;
+    background: rgba(0,0,0,.4);
+    z-index: 50;
+    display: none;
+}
+.inform,.inform-1,.inform-2,.inform-3,.inform-4,.inform-5,.inform-6{
+    width: 576px;
+    height: 360px;
+    z-index: 51;
+    /*border: 1px solid #000;*/
+    position: absolute;
+    top: 50%;
+    margin-top: -180px;
+    left: 50%;
+    margin-left: -288px;
+    border-radius: 8px;
+
+}
+.inform-head{
+    width: 100%;
+    height: 40px;
+    background: #f2f2f2;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+    line-height: 40px;
+    border-bottom:1px solid #d9d9d9;
+}
+.inform-head span{
+    font-size: 16px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.cancel{
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    line-height: 40px;
+    font-weight: bold;
+}
+.cancel:hover{
+    color: #00aa5c;
+    transition: all .5s;
+}
+.inform-body{
+    padding:32px 75px 96px 75px;
+    background: #ffffff;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    font-size: 14px;
+    color: #555555;
+}
+.inform-3 .inform-body{
+    padding:32px 75px 96px 75px;
+}
+.tel{
+    height: 36px;
+    line-height: 36px;
+    margin-bottom: 32px;
+}
+.tel span{
+    width: 96px;
+    float: left;
+    text-align: right;
+}
+.img{
+    width: 152px;
+    border: 1px solid #d9d9d9;
+    padding-left: 5px;
+    margin-right: 7px;
+}
+.gain{
+    width: 128px;
+    background: #00aa5c;
+    color: #ffffff;
+}
+.nextStep ,.abolish{
+    margin-top: 12px;
+    width: 136px;
+    height: 40px;
+    margin-left: 96px;
+    background: #00aa5c;
+    color: #ffffff;
+    border-radius: 5px;
+}
+.wrong{
+    display: none;
+    margin-left: 100px;
+    color: #ff4848;
+    position: absolute;
+    left: 75px;
+    top: 190px;
+}
+.newTel{
+    width: 285px;
+    border: 1px solid #d9d9d9;
+    padding-left: 5px;
+    margin-right: 7px;
+}
+.inform-1{
+    display: none;
+}
+.inform-2 .inform-body{
+    padding-top: 10px;
+}
+.inform-2{
+    display: none;
+}
+.inform-body-2{
+    /*padding-left: 170px;*/
+    text-align: center;
+}
+.inform-2 .nextStep-2 {
+    margin-left: 215px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.inform-3{
+    display: none;
+    overflow: hidden;
+}
+
+/*邮箱弹出框*/
+.wrong-email{
+    color: #ff4848;
+    display: none;
+    height: 20px;
+    position: absolute;
+    left: 170px;
+}
+/*.wrong-email span{*/
+    /*position: absolute;*/
+    /*left: 96px;*/
+/*}*/
+#next{
+    position: relative;
+    bottom: -40px;
+}
+.nextStep-2{
+    position: absolute;
+    bottom: 135px;
+}
+.inform-3 .inform-body{
+    padding-bottom: 116px;
+}
+.inform-4{
+    display: none;
+}
+.inform-4 .inform-body p{
+    text-align: center;
+    font-size: 15px;
+}
+.inform-4 .inform-body .nextStep-4{
+    margin-left: 135px;
+    margin-top: 30px;
+}
+/*//修改密码*/
+.inform-5{
+    display: none;
+}
+.inform-5 .inform-body label{
+    height: 36px;
+    position: relative;
+}
+.inform-5 .inform-body label span{
+    width: 96px;
+    float: left;
+    text-align: right;
+    line-height: 36px;
+    font-weight: normal;
+}
+.inform-5 .inform-body label input{
+    /*margin-top: 10px;*/
+    width: 200px;
+    border: 1px solid #d9d9d9;
+    padding-left: 5px;
+    margin-right: 7px;
+    height: 36px;
+    margin-left: 5px;
+}
+.inform-5 .inform-body  .nextStep-5{
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+::-webkit-input-placeholder {
+    color: #bbb;
+}
+.inform-5 .inform-body .newpwd2-w{
+    float: right;
+    width: 120px;
+    position: absolute;
+    right: -100px;
+    top: 0;
+    color: #ff4848;
+    display: none;
+}
+.fail-pwd{
+    position: absolute;
+    bottom: 140px;
+    left: 180px;
+    color: #ff4848;
+    display: none;
+}
+.inform-6{
+    display: none;
+}
+.inform-6 .inform-body p{
+    margin-top: 30px;
+    text-align: center;
+}
+.nextStep-6{
+    margin-top: 86px;
+    margin-left: 140px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/user/repayment/detail/update_user_repayment_info_ajax" allowExtra="true">
+	<parameters>
+        <parameter name="id" type="int" minValue="0" required="true"/>
+        <parameter name="userId" type="int" minValue="0" required="true"/>
+        <parameter name="status" type="int" minValue="0" required="true"/>
+        <parameter name="dbtNo" type="html_string" minLength="1" maxLength="64"/>
+        <!--<parameter name="rejectNote" type="html_string" minValue="0" required="true"/>-->
+        <!--<parameter name="rejectDescription" type="html_string" minLength="1" maxLength="256"/>-->
+	</parameters>
+	<rules/>
+	<customValidators />
+</api>

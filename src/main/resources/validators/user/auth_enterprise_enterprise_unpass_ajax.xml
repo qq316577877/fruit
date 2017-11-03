@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/user/auth_enterprise_enterprise_unpass_ajax" allowExtra="true">
+	<parameters>
+        <parameter name="edit-enterprise-userid" type="int" minValue="1" required="true"/>
+        <parameter name="edit-enterprise-identification" type="int"  required="true"/>
+        <parameter name="edit-enterprise-rejectNote" type="html_string" minLength="1" maxLength="64"/>
+        <parameter name="edit-enterprise-description" type="html_string" minLength="1" maxLength="256" />
+	</parameters>
+	<rules/>
+	<customValidators />
+</api>

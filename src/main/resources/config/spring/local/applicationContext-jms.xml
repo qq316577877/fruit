@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd 
+    http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.1.xsd
+    http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx-3.1.xsd ">
+
+	<!-- jmsFactory -->
+	<bean id="commonFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL"
+			value="failover://${broker.address}?randomize=false&amp;jms.useAsyncSend=true">
+		</property>
+	</bean>
+	
+	<!-- recive 工厂 -->
+	<bean id="poolReciveConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
+		<property name="connectionFactory" ref="commonFactory" />
+	</bean>
+	
+	<!-- send 工厂-->
+	<bean id="poolSendConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
+		<property name="connectionFactory" ref="commonFactory"></property>
+		<property name="maximumActive" value="1"></property>
+	</bean>
+	
+	<!-- 借据连接池 -->
+	<bean id="debtContractQuartzPool"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="8" />
+		<property name="maxPoolSize" value="10" />
+		<property name="queueCapacity" value="8" />
+		<property name="threadNamePrefix" value="fruit-" />
+		<property name="daemon" value="true" />
+	</bean>
+
+	<!-- 资金连接池 -->
+	<bean id="providerLoanQuartzPool"
+		  class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="8" />
+		<property name="maxPoolSize" value="8" />
+		<property name="queueCapacity" value="8" />
+		<property name="threadNamePrefix" value="fruit-" />
+		<property name="daemon" value="true" />
+	</bean>
+
+	<!-- 货柜连接池 -->
+	<bean id="containerProcessQuartzPool"
+		  class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="20" />
+		<property name="maxPoolSize" value="20" />
+		<property name="queueCapacity" value="20" />
+		<property name="threadNamePrefix" value="fruit-" />
+		<property name="daemon" value="true" />
+	</bean>
+
+	<!-- Spring jmsTemplate -->
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="poolSendConnectionFactory"></property>
+		<property name="defaultDestinationName" value="subject"></property>
+		<property name="deliveryPersistent" value="true"></property>
+		<property name="pubSubDomain" value="true"></property>
+		<property name="sessionAcknowledgeMode" value="1"></property>
+		<property name="explicitQosEnabled" value="true"></property>
+		<property name="timeToLive" value="604800000"></property>
+	</bean>
+	
+	<!-- 借款合同队列 start-->
+	<bean id="debtContractDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0" value="${debt.contract.queue}" />
+	</bean>
+	
+	<!-- Queue Producer -->
+	<bean id="PushDebtContractProxy" class="com.fruit.sys.admin.queue.PushDebtContractProxy">
+		<property name="jmsTemplate" ref="jmsTemplate"></property>
+		<property name="debtContractDestination" ref="debtContractDestination"></property>
+	</bean>
+	<!-- 资金服务-->
+	<bean id="loanDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0" value="${loan.provider.queue}" />
+	</bean>
+	
+	<bean id="pushProviderLoanProxy" class="com.fruit.sys.admin.queue.PushProviderLoanProxy">
+		<property name="jmsTemplate" ref="jmsTemplate"></property>
+		<property name="loanDestination" ref="loanDestination"></property>
+	</bean>
+
+	<!-- 货柜处理 start-->
+	<bean id="containerProcessDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0" value="${container.update.queue}" />
+	</bean>
+
+	<!-- Queue Producer -->
+	<bean id="pushContainerProcessProxy" class="com.fruit.sys.admin.queue.PushContainerProcessProxy">
+		<property name="jmsTemplate" ref="jmsTemplate"></property>
+		<property name="containerProcessDestination" ref="containerProcessDestination"></property>
+	</bean>
+
+	<bean id="receiveProviderLoanListener" class="com.fruit.sys.admin.queue.ReceiveProviderLoanListener"/>
+
+	<bean id="receiveDebtContractListener" class="com.fruit.sys.admin.queue.ReceiveDebtContractListener"/>
+	<!-- 货柜处理-->
+	<bean id="receiveContanierProcessListener" class="com.fruit.sys.admin.queue.ReceiveContanierProcessListener"/>
+	
+	<!-- 借据合同消费者 -->
+	<bean id="debtContractQuartzListener"
+		class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="connectionFactory" ref="poolReciveConnectionFactory" />
+		<property name="concurrentConsumers" value="1" />
+		<property name="maxConcurrentConsumers" value="1" />
+		<property name="destination" ref="debtContractDestination" />
+		<property name="messageListener" ref="receiveDebtContractListener" />
+		<property name="receiveTimeout" value="10000" />
+		<property name="taskExecutor" ref="debtContractQuartzPool" />
+		<!-- 0:CACHE_NONE,1:CACHE_CONNECTION,2:CACHE_SESSION,3:CACHE_CONSUMER,4:CACHE_AUTO -->
+		<property name="cacheLevel" value="3" />
+		<property name="sessionTransacted" value="true" />
+	</bean>
+	<!-- 借据合同队列 end-->
+
+	<!-- 资金消费者 -->
+	<bean id="debtLoanQuartzListener"
+		  class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="connectionFactory" ref="poolReciveConnectionFactory" />
+		<property name="concurrentConsumers" value="1" />
+		<property name="maxConcurrentConsumers" value="1" />
+		<property name="destination" ref="loanDestination" />
+		<property name="messageListener" ref="receiveProviderLoanListener" />
+		<property name="receiveTimeout" value="10000" />
+		<property name="taskExecutor" ref="providerLoanQuartzPool" />
+		<property name="cacheLevel" value="3" />
+		<property name="sessionTransacted" value="true" />
+	</bean>
+	<!-- 资金服务队列 end-->
+
+	<!-- 货柜消费者 -->
+	<bean id="containerQuartzListener"
+		  class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="connectionFactory" ref="poolReciveConnectionFactory" />
+		<property name="concurrentConsumers" value="1" />
+		<property name="maxConcurrentConsumers" value="1" />
+		<property name="destination" ref="containerProcessDestination" />
+		<property name="messageListener" ref="receiveContanierProcessListener" />
+		<property name="receiveTimeout" value="10000" />
+		<property name="taskExecutor" ref="containerProcessQuartzPool" />
+		<property name="cacheLevel" value="3" />
+		<property name="sessionTransacted" value="true" />
+	</bean>
+	<!-- 资金服务队列 end-->
+	
+</beans>

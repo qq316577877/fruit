@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/drivers/register_and_login_ajax" allowExtra="true">
+	<parameters>
+        <parameter name="mobile" type="html_string" minLength="11" maxLength="11" required="true" />
+        <parameter name="mobileCaptcha" type="html_string" minLength="6" maxLength="6" required="true"/>
+	</parameters>
+	<rules/>
+	<customValidators />
+</api>

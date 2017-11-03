@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/user/product/save_product_loan_ajax" allowExtra="true">
+	<parameters>
+        <parameter name="userId" type="int" minValue="1" required="true"/>
+        <parameter name="productId" type="int" minValue="1" required="true"/>
+        <parameter name="productLoan" type="html_string" minLength="1" maxLength="18" required="true"/>
+    </parameters>
+	<rules/>
+	<customValidators />
+</api>

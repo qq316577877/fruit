@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/drivers/update_driver_info_ajax" allowExtra="true">
+	<parameters>
+        <parameter name="mobile" type="html_string" minLength="11" maxLength="11" required="true" />
+		<parameter name="name" type="html_string"  maxLength="32" required="false" />
+        <parameter name="licensePlate" type="html_string"  maxLength="32" required="false"/>
+	</parameters>
+	<rules/>
+	<customValidators />
+</api>

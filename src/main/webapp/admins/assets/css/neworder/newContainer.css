@@ -1,0 +1,94 @@
+.main-r{
+    width: 925px;
+}
+.containerList{
+    width: 100%;
+    font-size: 14px;
+    /*border: 1px solid #eee;*/
+}
+.containerHeader{
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding-left: 30px;
+    height: 40px;
+    line-height: 40px;
+    background: rgb(231, 249, 241);
+}
+.containerHeader span{
+    display: inline-block;
+    margin-right: 100px;
+}
+.order-head li:last-of-type{
+    width: 152px;
+}
+#orderList .containerBody table tr td:last-of-type{
+    width: 152px;
+}
+#orderList .containerBody table tr{
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #eee;
+    width: 923px;
+    display: block;
+    margin-bottom: 0;
+}
+#orderList .containerBody table{
+    border: 1px solid #eee;
+
+}
+#orderList .containerBody table tr td:last-of-type a{
+    /*display: inline-block;!important;*/
+    color: #00AA5C;
+}
+#orderList .containerBody table tr td:nth-of-type(6) {
+    width: 120px;
+    border-right:1px solid #eee;
+}
+#orderList table tr td{
+    height: 100%;!important;
+}
+
+#orderList .containerBody table tr {
+    border-bottom:none;
+}
+#orderList .containerBody table {
+    min-height: 120px;
+}
+.operation{
+    border-left:1px solid #eee;
+    margin-left: -2px;
+}
+
+
+#containerList .orderNo{
+    margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

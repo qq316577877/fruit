@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/drivers/get_driver_info_by_mobile_ajax" allowExtra="true">
+	<parameters>
+        <parameter name="mobile" type="html_string" minLength="11" maxLength="11" required="true" />
+	</parameters>
+	<rules/>
+	<customValidators />
+</api>

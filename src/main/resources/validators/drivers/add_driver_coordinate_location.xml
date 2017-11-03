@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/drivers/add_driver_coordinate_location" allowExtra="true">
+	<parameters>
+        <parameter name="mobile" type="html_string" minLength="11" maxLength="11" required="true" />
+        <parameter name="latitudeCoordinates" type="html_string" required="true"/>
+        <parameter name="longitudeCoordinate" type="html_string"  required="true"/>
+	</parameters>
+	<rules/>
+	<customValidators />
+</api>

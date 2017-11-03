@@ -1,0 +1,12 @@
+
+.audit_info {
+    display: flex;
+}
+.audit_info .infoCloms{
+    flex: 1;
+}
+.orderStep a:hover{
+    background: #00AA5C;
+    transition: all .3s;
+    color: #fff;
+}

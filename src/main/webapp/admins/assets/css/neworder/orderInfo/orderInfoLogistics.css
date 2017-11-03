@@ -1,0 +1,81 @@
+#select{
+    width: 200px;
+    height: 30px;
+}
+#addDails{
+    margin-left: 0;
+}
+.logistics_l{
+    margin-bottom: 200px;
+}
+.big-photo {
+    border: 1px dashed #DDDDDD;
+    float: left;
+    margin-right: 20px;
+}
+
+#addLogisticsInfo .webuploader-pick{
+    padding: 10px 6px;
+}
+
+#imgPicker{
+    height: 30px;
+    line-height: 0;
+    background: #00aa5c;
+    color: #fff;
+}
+#showImage img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+
+#showImage{
+    padding-left: 90px;
+    margin-top: 10px;
+    width: 425px;
+}
+.showImageLists{
+    clear: both;
+}
+#addLogisticsInfo .logistics_r .containers i{
+    color: red;
+}
+#addDails:hover{
+    transition: all .3s;
+    background: #10c471;
+}
+
+.mask #addLogisticsInfo input[type="button"]:hover,
+.mask #addLogisticsInfo button:hover
+
+{
+    transition: all .3s;
+    background: #10c471;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

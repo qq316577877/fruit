@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jms="http://www.springframework.org/schema/jms" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd 
+    http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+    http://www.springframework.org/schema/tx  http://www.springframework.org/schema/tx/spring-tx.xsd ">
+
+	<dubbo:application name="com.ovft.fruit.admin"/>
+
+	<!-- 使用zookeeper注册中心暴露服务地址 -->
+	<dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}"/>
+	
+	<!-- 启用Kryo -->
+	<dubbo:protocol name="dubbo" serialization="kryo" />
+	
+	<!-- 开启dubbo监控 -->
+	<dubbo:monitor protocol="registry" />
+	
+	<!-- 要引用的服务 -->
+	<dubbo:reference interface="com.ovft.contract.api.service.TemplateService" id="templateService" timeout="10000"/>
+	
+	<dubbo:reference interface="com.ovft.contract.api.service.AccountInfoService" id="accountInfoService" timeout="10000"/>
+	
+	<dubbo:reference interface="com.ovft.contract.api.service.EcontractService" id="econtractService" timeout="20000"/>
+	
+	<dubbo:reference interface="com.ovft.contract.api.service.ElectronicSealService" id="electronicSealService" timeout="10000"/>
+	
+	<!-- 要引用的服务 -->
+	<dubbo:reference interface="com.ovft.fss.api.service.UploadService" id="uploadService" timeout="10000"/>
+	
+	<dubbo:reference interface="com.ovft.fss.api.service.ContractUploadService" id="contractUploadService" timeout="10000"/>
+
+	<dubbo:reference interface="com.ovft.notice.api.service.MessageNoticeService" id="messageNoticeService" timeout="10000"/>
+
+</beans>

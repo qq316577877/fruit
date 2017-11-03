@@ -1,0 +1,65 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+               http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+               http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation">
+            <value>classpath:/ehcache.xml</value>
+        </property>
+        <property name="shared" value="true"/>
+    </bean>
+
+    <bean id="propertyConfigurer" class="com.fruit.sys.admin.config.EncryptPropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:config/properties/alpha.properties</value>
+                <value>classpath:config/properties/beta.properties</value>
+                <value>classpath:config/properties/dev.properties</value>
+                <value>classpath:config/properties/product.properties</value>
+            </list>
+        </property>
+        <property name="encryptedProps">
+            <set>
+                <value>ds.username</value>
+                <value>ds.password</value>
+                <value>ds.search.username</value>
+                <value>ds.search.password</value>
+                <value>ds.report.username</value>
+                <value>ds.report.password</value>
+                <value>pay.alipay.pid</value>
+                <value>pay.alipay.md5key</value>
+                <value>delivery.kuaidiKey</value>
+                <value>delivery.kuaidiSalt</value>
+                <value>pay.kuaiqian.pid</value>
+                <value>pay.kuaiqian.md5Key</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>messages</value>
+            </list>
+        </property>
+    </bean>
+
+    <import resource="applicationContext-mvc.xml"/>
+    <import resource="applicationContext-service.xml"/>
+    <import resource="applicationContext-quartz.xml"/>
+    <import resource="applicationContext-cache.xml"/>
+    <import resource="applicationContext-dubbo.xml"/>
+	<import resource="applicationContext-jms.xml"/>
+
+    <context:component-scan base-package="com.fruit.base.file.upload.aliyun.client"/>
+    <context:component-scan base-package="com.ovfintech.arch.validation"/>
+    <context:component-scan base-package="com.fruit.sys.admin"/>
+
+</beans>

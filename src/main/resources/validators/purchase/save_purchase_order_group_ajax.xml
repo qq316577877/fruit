@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/purchase/order/group/save_ajax" allowExtra="true">
+    <parameters>
+      <parameter name="id" type="int" minValue="0" default="0"/>
+        <parameter name="buyId" type="int" minValue="0" default="0" required="true"/>
+        <parameter name="salesOrderId" type="int" minValue="0" default="0" required="true"/>
+        <parameter name="salesAmount" type="html_string" minLength="0" default="0" required="true"/>
+        <parameter name="salesFreightAmount" type="html_string" minLength="0"  default="" required="false"/>
+        <parameter name="salesPaymentAmount" type="html_string" minLength="0" default="" required="true"/>
+        <parameter name="salesCostAmount" type="html_string" minLength="0" default="" required="false"/>
+        <parameter name="type" type="int" minValue="0" default="0" required="true"/>
+        <parameter name="cityId" type="int" minValue="1" default="0" required="true"/>
+        <parameter name="saleName" type="html_string" minLength="0" default="" required="true"/>
+        <parameter name="memo" type="html_string" minLength="0" maxLength="128" default=""/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

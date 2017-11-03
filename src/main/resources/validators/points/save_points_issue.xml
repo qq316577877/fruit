@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/points/save_points_issue_ajax" allowExtra="true">
+    <parameters>
+        <parameter name="userId" type="int" minValue="1" required="true"/>
+        <parameter name="points" type="int" minValue="1" required="true"/>
+        <parameter name="remark"  type="html_string" minLength="0" maxLength="64" default=""/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

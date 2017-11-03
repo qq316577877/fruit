@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/drivers/get_driver_location_by_container_ajax" allowExtra="true">
+	<parameters>
+        <parameter name="containerNo" type="html_string" maxLength="64" required="true" />
+	</parameters>
+	<rules/>
+	<customValidators />
+</api>

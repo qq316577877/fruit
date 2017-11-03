@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/user/save_withdraw_account_ajax" allowExtra="true">
+    <parameters>
+        <parameter name="withdrawAccountId" type="int" minValue="1" default="0"/>
+        <parameter name="userId" type="int" minValue="1" required="true"/>
+        <parameter name="accountName" type="html_string" minLength="1" maxLength="128" required="true"/>
+        <parameter name="bank" type="html_string" minLength="1" maxLength="64" required="true"/>
+        <parameter name="acount" type="html_string" minLength="1" maxLength="64" required="true"/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/configure/enterpriseinfo/enterprise_add_ajax" allowExtra="true">
+	<parameters>
+        <parameter name="name" type="html_string" maxLength="64" required="true"/>
+        <parameter name="enName" type="html_string" maxLength="64" required="false"/>
+        <parameter name="credential" type="html_string" maxLength="32" required="false"/>
+        <parameter name="contact" type="html_string" maxLength="32" required="false"/>
+        <parameter name="type" type="int" minValue="1" required="true"/>
+        <parameter name="locationType" type="int" minValue="1" required="true"/>
+	</parameters>
+	<rules/>
+	<customValidators />
+</api>

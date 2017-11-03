@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/item/explosive/save_ajax" allowExtra="true">
+    <parameters>
+        <parameter name="id" type="int" minValue="0" default="0"/>
+        <parameter name="eventId" type="int" minValue="0" default="0"/>
+        <parameter name="brandId" type="int" minValue="0" default="0" required="true"/>
+        <parameter name="productCode" type="html_string" minLength="0" maxLength="64" default="" required="true"/>
+        <parameter name="sellerId" type="int" minLength="0" maxLength="7" minValue="0" default="0" required="true"/>
+        <parameter name="cityId" type="int" minLength="0" maxLength="3" minValue="1" default="0" required="true"/>
+        <parameter name="discount" type="html_string" minLength="0" maxLength="10" default="0"/>
+        <parameter name="currentPrice" type="html_string" minLength="0" maxLength="10" default="0"/>
+        <parameter name="maxCountPrice" type="html_string" minLength="0" maxLength="10" default="0"/>
+        <parameter name="cost" type="html_string" minLength="0" maxLength="10" default="0"/>
+        <parameter name="stock" type="int" minValue="0" default="0"/>
+        <parameter name="priority" type="int" minValue="0" default="0"/>
+        <parameter name="invoiceRule" type="html_string" minLength="0" maxLength="64" default=""/>
+        <parameter name="freightRule" type="html_string" minLength="0" maxLength="64" default=""/>
+        <parameter name="minPurchaseCount" type="int" minValue="1" default="1"/>
+        <parameter name="maxPurchaseCount" type="int" minValue="1" default="1"/>
+        <parameter name="purchaseRule" type="html_string" minLength="0" maxLength="64" default=""/>
+        <parameter name="memo" type="html_string" minLength="0" maxLength="64" default=""/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

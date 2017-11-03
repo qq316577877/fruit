@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/purchase/order/delivery/save_ajax" allowExtra="true">
+    <parameters>
+      <parameter name="id" type="int" minValue="0" default="0"/>
+        <parameter name="groupId" type="int" minValue="0" default="0"/>
+        <parameter name="salesOrderId" type="int" minValue="0" default="0"/>
+        <parameter name="buyerId" type="int" minValue="0" default="0" required="true"/>
+        <parameter name="provinceId" type="int" minValue="1" default="0" required="true"/>
+        <parameter name="cityId" type="int" minValue="1" default="0" required="true"/>
+        <parameter name="address" type="html_string" minLength="0"  required="false"/>
+        <parameter name="buyerContact" type="html_string" minLength="0"  required="false"/>
+        <parameter name="buyerPhone" type="html_string" minLength="0"  required="false"/>
+        <parameter name="shippingCompanyName" type="html_string" minLength="0" maxLength="64" default="" required="true"/>
+        <parameter name="shippingContact" type="html_string" minLength="0" maxLength="64" default="" required="true"/>
+        <parameter name="shippingPhone" type="html_string" minLength="0" maxLength="64" default="" required="true"/>
+        <parameter name="shippingProvinceId" type="int" minValue="1" default="0" required="true"/>
+        <parameter name="shippingCityId" type="int" minValue="1" default="0" required="true"/>
+        <parameter name="shippingAddress" type="html_string" minLength="0" maxLength="64" default="" required="true"/>
+        <parameter name="companyType" type="int" minValue="0" default="0"/>
+        <parameter name="trackingNumber" type="html_string" minLength="0" maxLength="64" default="0"/>
+        <parameter name="shippingTime" type="html_string" minLength="0" maxLength="64" default="0"/>
+        <parameter name="memo" type="html_string" minLength="0" maxLength="128" default=""/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

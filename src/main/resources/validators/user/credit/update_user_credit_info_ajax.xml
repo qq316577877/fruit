@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/user/credit/detail/update_user_credit_info_ajax" allowExtra="true">
+	<parameters>
+        <parameter name="id" type="int" minValue="0" required="true"/>
+        <parameter name="status" type="int" minLength="0" required="true"/>
+        <parameter name="rejectNote" type="html_string" minLength="0" required="true"/>
+        <parameter name="rejectDescription" type="html_string" minLength="0" required="true"/>
+	</parameters>
+	<rules/>
+	<customValidators />
+</api>

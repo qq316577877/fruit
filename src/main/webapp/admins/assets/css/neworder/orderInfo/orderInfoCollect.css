@@ -1,0 +1,55 @@
+#collectionTable{
+    margin-left: 35px;
+    margin-top: 30px;
+}
+#collectionTable tr:first-of-type{
+    height: 30px;
+    line-height: 30px;
+    background: rgba(204, 204, 204, 0.549019607843137);
+}
+#collectionTable th,
+#collectionTable td{
+    width: 200px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+#collectionTable tbody{
+    background: #fff;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

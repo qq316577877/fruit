@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2017-2022 by Ovfintech (Wuhan) Technology Co., Ltd.
+  ~ All right reserved.
+  -->
+
+<api name="/user/delivery_address/get_user_receive_address_ajax" allowExtra="true">
+    <parameters>
+        <parameter name="orderNo" type="html_string" minLength="1" maxLength="64" required="true"/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

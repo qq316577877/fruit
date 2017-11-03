@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/drivers/captcha/send_sms_drivers_ajax" allowExtra="true">
+	<parameters>
+        <parameter name="mobile" type="html_string" minLength="11" maxLength="11" required="true" default=""/>
+        <parameter name="type" type="int" minValue="11" maxValue="11" required="true" default="0"/>
+	</parameters>
+	<rules/>
+	<customValidators />
+</api>

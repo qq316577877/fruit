@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/marketEvent/save_ajax" allowExtra="true">
+    <parameters>
+        <parameter name="id" type="int" minValue="0" default="0"/>
+        <parameter name="title" type="html_string" minLength="0" maxLength="64" default="" required="true"/>
+        <parameter name="subTitle" type="html_string" minLength="0" maxLength="64" default=""/>
+        <parameter name="url" type="html_string" minLength="0" maxLength="256" default=""/>
+        <parameter name="bannerPicUrl" type="html_string" minLength="0" maxLength="256" default=""/>
+        <parameter name="smallPicUrl" type="html_string" minLength="0" maxLength="256" default=""/>
+        <parameter name="coverPicUrl" type="html_string" minLength="0" maxLength="256" default=""/>
+        <parameter name="h5HomePicUrl" type="html_string" minLength="0" maxLength="256" default=""/>
+        <parameter name="siteType" type="int" minValue="0" default="0"/>
+        <parameter name="type" type="int" minValue="0" default="1"/>
+        <parameter name="priority" type="int" minValue="0" default="0"/>
+        <parameter name="bizId" type="int" minValue="0" default="0"/>
+        <parameter name="description" type="html_string" minLength="0" maxLength="256" default=""/>
+        <parameter name="memo" type="html_string" minLength="0" maxLength="64" default=""/>
+        <parameter name="beginTime" type="html_string" minLength="10" maxLength="19" default="0001-01-01 00:00:00"/>
+        <parameter name="expireTime" type="html_string" minLength="10" maxLength="19" default="0001-01-01 00:00:00"/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

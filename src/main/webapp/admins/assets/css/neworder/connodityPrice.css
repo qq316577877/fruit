@@ -1,0 +1,82 @@
+#header{
+    height: 60px;
+    line-height: 60px;
+}
+#header h5{
+    font-size: 24px;
+    display: inline-block;
+}
+.commodityList{
+    padding: 40px;
+    width: 980px;
+}
+#day_1{
+    border: 1px solid #eee;
+    width: 200px;
+    height: 30px;
+    margin-left: 100px;
+}
+#btn,#audit{
+    width: 80px;
+    height: 30px;
+    background: #00AA5C;
+    vertical-align: middle;
+    line-height: 30px;
+    color: #fff;
+}
+#audit{
+    margin-left: 30px;
+}
+#body table{
+    width: 900px;
+    border:1px solid #eee
+}
+#body table th ,
+#body table td {
+    height: 30px;
+    text-align: center;
+    border:1px solid #eee
+}
+#body table input{
+    width: 100px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+input[disabled]{
+    background: #E9E7E7;
+}
+.fr{
+    float: right;
+}
+
+#productCommodityList  .errorinput input{
+    border-color: red;
+    /*color:red;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

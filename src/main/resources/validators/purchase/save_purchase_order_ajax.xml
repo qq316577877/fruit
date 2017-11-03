@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/purchase/order/save_ajax" allowExtra="true">
+    <parameters>
+        <parameter name="id" type="int" minValue="0" default="0"/>
+        <parameter name="groupId" type="int" minValue="0" default="0"/>
+        <parameter name="orderId" type="int" minValue="0" default="0"/>
+        <parameter name="sellerId" type="int"  minValue="0" default="" required="false"/>
+        <parameter name="sellerName" type="html_string" minLength="0" maxLength="64" default="" required="true"/>
+        <parameter name="sellerMobile" type="html_string" minLength="0" maxLength="64" default="" required="true"/>
+        <parameter name="needInvoice" type="int" minValue="0" default="0" required="true"/>
+        <parameter name="cityId" type="int" minLength="0"  minValue="1" default="0" required="true"/>
+        <parameter name="shippingAddress" type="html_string" minLength="0" maxLength="64" default="0" required="true"/>
+        <parameter name="contractUrl" type="html_string" minLength="0" maxLength="256" default="0" required="true"/>
+        <parameter name="type" type="int" minValue="0" default="0" required="true"/>
+        <parameter name="totalAmount" type="html_string" minLength="0" default="" required="true"/>
+        <parameter name="freightAmount" type="html_string" minLength="0"  default="" required="false"/>
+        <parameter name="costAmount" type="html_string" minValue="0" default="" required="false"/>
+        <parameter name="paymentAmount" type="html_string" minValue="0" default="" required="true"/>
+        <parameter name="saleName" type="html_string" minLength="0" default="" required="true"/>
+        <parameter name="arrivalTime" type="html_string" minLength="0" default=""/>
+        <parameter name="paymentTime" type="html_string" minLength="0"  default=""/>
+        <parameter name="finishTime" type="html_string" minLength="0"  default=""/>
+        <parameter name="memo" type="html_string" minLength="0" maxLength="64" default=""/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

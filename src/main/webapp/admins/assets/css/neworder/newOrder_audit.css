@@ -1,0 +1,129 @@
+.audit_head {
+    margin-left: 20px;
+    margin-top: 20px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+.audit_info {
+    padding: 10px 30px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.audit_info > div {
+    width: 300px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.audit_info .infoCloms div{
+    margin-bottom: 13px;
+}
+
+.audit_info .audit_btn {
+    display: block;
+    margin-left: 75px;
+    margin-bottom: 0;
+}
+
+.audit_info .audit_btn input {
+    width: 70px;
+    height: 30px;
+    color: #fff;
+    background: #00aa5c;
+}
+
+.audit_info .audit_btn #canc {
+    background: #fff;
+    color: #00aa5c;
+    margin-left: 30px;
+    border: 1px solid #00aa5c;
+}
+
+.orderStep {
+    margin-left: 35px;
+    margin-top: 20px;
+}
+
+.orderStep a {
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    color: #00aa5c;
+    border: 1px solid #cccccc;
+}
+
+/*#orderOne{*/
+/*color:#fff;*/
+/*}*/
+#oneStep {
+    display: block;
+}
+
+#twoStep {
+    display: none;
+}
+
+.orderStep a:hover {
+    text-decoration: none;
+}
+
+.orderStep .clickStep {
+    background: #00aa5c;
+    color: #fff;
+}
+
+#imgPicker > div:nth-of-type(2) {
+    width: 100%;
+    height: 100%;
+}
+
+#imgPicker2 > div:nth-of-type(2) {
+    width: 100%;
+    height: 100%;
+}
+
+.pro-list-1 .pro-list-body div:nth-of-type(2) {
+    width: 120px;
+}
+
+#pass:hover
+{
+    transition: all .5s;
+    background: #fff;
+    color: #00AA5C;
+    border: 1px solid #00AA5C;
+}
+
+/*#orderOne:hover{*/
+    /*transition: all .5s;*/
+    /*background: #fff;*/
+    /*color: #00AA5C;*/
+    /*border: 1px solid #00AA5C;*/
+/*}*/
+
+.audit_info .audit_btn #canc:hover
+{
+    background: #00AA5C;
+    color: #fff;
+    transition: all .5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

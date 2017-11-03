@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/user/loanManagement/detail/update_user_loanManagement_info_ajax" allowExtra="true">
+	<parameters>
+        <parameter name="id" type="int" minValue="0" required="true"/>
+        <parameter name="userId" type="int" minValue="0" required="true"/>
+        <parameter name="status" type="int" minValue="0" required="true"/>
+        <parameter name="confirmLoan" type="html_string" minValue="0" required="true"/>
+        <parameter name="dbtExpDtString" type="html_string" minValue="0" required="true"/>
+        <!--<parameter name="rejectDescription" type="html_string" minLength="1" maxLength="256"/>-->
+	</parameters>
+	<rules/>
+	<customValidators />
+</api>

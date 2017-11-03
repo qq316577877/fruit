@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/admin/user/save_ajax" allowExtra="true">
+    <parameters>
+        <parameter name="id" type="int" minValue="0" default="0"/>
+        <parameter name="userName" type="html_string" minLength="2" maxLength="32" required="true"/>
+        <parameter name="type" type="int" minLength="0" maxLength="3" required="true"/>
+        <parameter name="cnName" type="html_string" minLength="2" maxLength="32" required="true"/>
+        <parameter name="enName" type="html_string" minLength="2" maxLength="32"/>
+        <parameter name="mail" type="html_string" minLength="3" maxLength="64"/>
+        <parameter name="mobile" type="html_string" minLength="11" maxLength="11" required="true"/>
+        <parameter name="depart" type="html_string" minLength="0" maxLength="32" default=""/>
+        <parameter name="info" type="html_string" minLength="0" maxLength="100" default=""/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

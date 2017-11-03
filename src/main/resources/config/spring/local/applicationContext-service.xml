@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2017-2022 by Ovfintech (Wuhan) Technology Co., Ltd.
+  ~ All right reserved.
+  -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+    <!--  datasource -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="${ds.url}"/>
+        <property name="user" value="${ds.username}"/>
+        <property name="password" value="${ds.password}"/>
+        <property name="minPoolSize" value="5"/>
+        <property name="maxPoolSize" value="30"/>
+        <property name="initialPoolSize" value="15"/>
+        <property name="maxIdleTime" value="18"/>
+        <property name="idleConnectionTestPeriod" value="60"/>
+        <property name="acquireRetryAttempts" value="3"/>
+        <property name="acquireRetryDelay" value="300"/>
+        <property name="maxStatements" value="0"/>
+        <property name="maxStatementsPerConnection" value="100"/>
+        <property name="numHelperThreads" value="6"/>
+        <property name="maxAdministrativeTaskTime" value="5"/>
+        <property name="preferredTestQuery" value="SELECT 1"/>
+    </bean>
+
+    <!-- Mybatis session factory -->
+    <bean name="sqlSessionFactory" id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations">
+            <list>
+                <value>classpath*:base/mapper/**/*.xml</value>
+                <value>classpath*:account/mapper/**/*.xml</value>
+                <value>classpath*:loan/mapper/**/*.xml</value>
+                <value>classpath*:sys/mapper/**/*.xml</value>
+                <value>classpath*:order/mapper/**/*.xml</value>
+                <value>classpath*:newOrder/mapper/**/*.xml</value>
+                <value>classpath*:portal/mapper/**/*.xml</value>
+                <value>classpath*:drivers/mapper/**/*.xml</value>
+                <value>classpath*:statistics/mapper/**/*.xml</value>
+            </list>
+        </property>
+        <property name="configLocation" value="classpath:config/mybatis-config.xml"></property>
+        <property name="transactionFactory">
+            <bean class="org.mybatis.spring.transaction.SpringManagedTransactionFactory"/>
+        </property>
+    </bean>
+
+    <!-- 事务处理 -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" order="0"/>
+
+    <!-- 声明式容器事务管理 ,transaction-manager指定事务管理器为transactionManager -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="transaction*" propagation="REQUIRED" />
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config expose-proxy="true">
+        <!-- 只对业务逻辑层实施事务 -->
+        <aop:pointcut id="txPointcut"
+                      expression="execution(* com.fruit.sys.admin.service..*.*(..))" />
+        <!-- Advisor定义，切入点和通知分别为txPointcut、txAdvice -->
+        <aop:advisor pointcut-ref="txPointcut" advice-ref="txAdvice" />
+    </aop:config>
+
+    <bean id="serviceSqlSessionTemplate" name="serviceSqlSessionTemplate" class="com.fruit.sys.admin.mybatis.FruitSqlSessionTemplate">
+        <constructor-arg ref="sqlSessionFactory"/>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage"
+                 value="com.fruit.account.biz.mapper,
+                 com.fruit.portal.biz.mapper,
+                 com.fruit.base.biz.mapper,
+                 com.fruit.sys.biz.mapper,
+                 com.fruit.order.biz.mapper,
+                 com.fruit.newOrder.biz.mapper,
+                 com.fruit.drivers.biz.mapper,
+                 com.fruit.statistics.biz.mapper,
+                 com.fruit.loan.biz.mapper"/>
+        <!--<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>-->
+        <property name="sqlSessionTemplateBeanName" value="serviceSqlSessionTemplate"/>
+    </bean>
+
+    <bean id="taskTriggerChannel" class="com.ovfintech.arch.common.event.engine.EventChannelFactoryBean">
+        <property name="channel" value="BackgroundTaskChannel"/>
+        <property name="eventTrigger">
+            <ref bean="taskTrigger"/>
+        </property>
+    </bean>
+
+    <context:component-scan base-package="com.fruit.account.biz.service"/>
+    <context:component-scan base-package="com.fruit.base.biz.service"/>
+    <context:component-scan base-package="com.fruit.loan.biz"/>
+    <context:component-scan base-package="com.fruit.sys.biz.service"/>
+    <context:component-scan base-package="com.fruit.order.biz.service"/>
+    <context:component-scan base-package="com.fruit.newOrder.biz.service"/>
+    <context:component-scan base-package="com.fruit.portal.biz.service"/>
+    <context:component-scan base-package="com.fruit.drivers.biz.service"/>
+    <context:component-scan base-package="com.fruit.statistics.biz.service"/>
+
+    <bean id="mainJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource">
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,40 @@
+#orderInsurance{
+    /*margin-left: 75px;*/
+    /*display: flex;*/
+    margin-top: 20px;
+    min-width: 1230px;
+}
+#orderInsurance th,
+#orderInsurance td{
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+#orderInsurance tr{
+    margin-bottom: 10px;
+    display: block;
+}
+#orderInsurance input{
+    border: 1px solid #eee;
+    height: 30px;
+}
+#subInsurance{
+    width: 80px;
+    height: 30px;
+    color: #fff;
+    background: #00AA5C;
+    text-align: center;
+    margin-left: 450px;
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
+#orderInsurance tr input {
+    width: 150px;
+}
+#subInsurance:hover{
+    transition: all .3s;
+    background: #10c471;
+}

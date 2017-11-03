@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2017-2022 by Ovfintech (Wuhan) Technology Co., Ltd.
+  ~ All right reserved.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- 线程执行器配置，用于任务注册 -->
+    <bean id="executor"
+          class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="10"/>
+        <property name="maxPoolSize" value="100"/>
+        <property name="queueCapacity" value="500"/>
+    </bean>
+    
+    <bean id="containerScanReceiveJob" class="com.fruit.sys.admin.job.ContainerScanReceiveJob"/>
+    
+    <bean id="containerScanReceiveJobService"
+    class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="containerScanReceiveJob" />
+        <property name="targetMethod" value="runJob" />
+    </bean>
+    
+    <bean id="containerScanReceiveJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="startDelay">
+            <value>1000</value>
+        </property>
+        <property name="jobDetail" ref="containerScanReceiveJobService" />
+        <!-- 每天早上10点15分一次 -->
+        <property name="cronExpression" value="0 0 */1 * * ?" />
+    </bean>
+
+
+    <bean id="containerNewScanReceiveJob" class="com.fruit.sys.admin.job.ContainerNewScanReceiveJob"/>
+
+    <bean id="containerNewScanReceiveJobService"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="containerNewScanReceiveJob" />
+        <property name="targetMethod" value="runJob" />
+    </bean>
+
+    <bean id="containerNewScanReceiveJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="startDelay">
+            <value>1000</value>
+        </property>
+        <property name="jobDetail" ref="containerNewScanReceiveJobService" />
+        <!-- 每天早上10点15分一次 -->
+        <property name="cronExpression" value="0 0 */1 * * ?" />
+    </bean>
+
+    <!-- 0ku.com心跳查看， 每隔三分钟一次 -->
+    <!--<bean id="portalHeartJobDetail"-->
+          <!--class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+        <!--<property name="targetObject" ref="portalHeartJob"/>-->
+        <!--<property name="targetMethod" value="runJob"/>-->
+    <!--</bean>-->
+    <!--<bean id="portalHeartTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="startDelay">-->
+            <!--<value>1000</value>-->
+        <!--</property>-->
+        <!--<property name="jobDetail" ref="portalHeartJobDetail"/>-->
+        <!--&lt;!&ndash; 每隔三分钟一次 &ndash;&gt;-->
+        <!--<property name="cronExpression" value="0 0/3 * ? * *"/>-->
+    <!--</bean>-->
+
+    <!-- 注册用户未提交企业认证查看，周一至周五每天早上9:15执行 -->
+    <!--<bean id="accountInfoCheckJobDetail"-->
+          <!--class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+        <!--<property name="targetObject" ref="accountInfoCheckJob"/>-->
+        <!--<property name="targetMethod" value="runJob"/>-->
+    <!--</bean>-->
+    <!--<bean id="accountInfoCheckJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="startDelay">-->
+            <!--<value>1000</value>-->
+        <!--</property>-->
+        <!--<property name="jobDetail" ref="accountInfoCheckJobDetail"/>-->
+        <!--<property name="cronExpression" value="0 15 9 ? * MON-FRI"/>-->
+        <!--&lt;!&ndash;<property name="cronExpression" value="0 0/1 * ? * *"/>&ndash;&gt;-->
+    <!--</bean>-->
+
+    <!-- 已完成订单三天后买家依然没有评论查看，周一至周五每天早上10:15执行 -->
+    <!--<bean id="orderReviewCheckJobDetail"-->
+          <!--class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+        <!--<property name="targetObject" ref="orderReviewCheckJob"/>-->
+        <!--<property name="targetMethod" value="runJob"/>-->
+    <!--</bean>-->
+    <!--<bean id="orderReviewCheckJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="startDelay">-->
+            <!--<value>1000</value>-->
+        <!--</property>-->
+        <!--<property name="jobDetail" ref="orderReviewCheckJobDetail"/>-->
+        <!--<property name="cronExpression" value="0 15 10 ? * MON-FRI"/>-->
+        <!--&lt;!&ndash;<property name="cronExpression" value="0 0/1 * ? * *"/>&ndash;&gt;-->
+    <!--</bean>-->
+
+    <!-- 订单限时状态提醒服务，每天13:00执行 -->
+    <!--<bean id="order24HoursStatusCheckJobDetail"-->
+          <!--class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+        <!--<property name="targetObject" ref="order24HoursStatusCheckJob"/>-->
+        <!--<property name="targetMethod" value="runJob"/>-->
+    <!--</bean>-->
+    <!--<bean id="order24HoursStatusCheckJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+        <!--<property name="startDelay">-->
+            <!--<value>1000</value>-->
+        <!--</property>-->
+        <!--<property name="jobDetail" ref="order24HoursStatusCheckJobDetail"/>-->
+        <!--<property name="cronExpression" value="0 0 13 ? * *"/>-->
+        <!--&lt;!&ndash;<property name="cronExpression" value="0 0/1 * ? * *"/>&ndash;&gt;-->
+    <!--</bean>-->
+
+
+   <!-- &lt;!&ndash; 订单限时状态提醒服务，每天13:00执行 &ndash;&gt;
+    <bean id="cartItemNoticebDetail"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="cartItemNoticeJob"/>
+        <property name="targetMethod" value="runJob"/>
+    </bean>
+    <bean id="cartItemNoticeJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="startDelay">
+            <value>1000</value>
+        </property>
+        <property name="jobDetail" ref="cartItemNoticebDetail"/>
+        <property name="cronExpression" value="0 0 10 1/3 * ?"/>
+    </bean>
+-->
+
+    <!-- 每天早上一点，统计订单、信贷基础信息-->
+    <bean id="statisticsOrderLoanDaysJob" class="com.fruit.sys.admin.job.StatisticsOrderLoanDaysJob"/>
+
+    <bean id="statisticsOrderLoanDaysJobService"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="statisticsOrderLoanDaysJob" />
+        <property name="targetMethod" value="runJob" />
+    </bean>
+
+    <bean id="statisticsOrderLoanDaysJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="startDelay">
+            <value>1000</value>
+        </property>
+        <property name="jobDetail" ref="statisticsOrderLoanDaysJobService" />
+        <!-- 每天1点 -->
+        <property name="cronExpression" value="0 0 1 * * ?" />
+        <!--<property name="cronExpression" value="0 */2 * * * ?" />-->
+    </bean>
+
+
+
+    <!-- 每天早上4点，统计平台可贷余额-->
+    <bean id="statisticsLoanableBalanceDaysJob" class="com.fruit.sys.admin.job.StatisticsLoanableBalanceDaysJob"/>
+
+    <bean id="statisticsLoanableBalanceDaysJobService"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="statisticsLoanableBalanceDaysJob" />
+        <property name="targetMethod" value="runJob" />
+    </bean>
+
+    <bean id="statisticsLoanableBalanceDaysJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="startDelay">
+            <value>1000</value>
+        </property>
+        <property name="jobDetail" ref="statisticsLoanableBalanceDaysJobService" />
+        <!-- 每天1点 -->
+        <property name="cronExpression" value="0 0 4 * * ?" />
+        <!--<property name="cronExpression" value="0 */2 * * * ?" />-->
+    </bean>
+
+    <!-- 设置调度 -->
+    <bean  lazy-init="false" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="containerScanReceiveJobTrigger"/>
+                <ref bean="statisticsOrderLoanDaysJobTrigger"/>
+                <ref bean="statisticsLoanableBalanceDaysJobTrigger"/>
+
+                <!--<ref bean="accountInfoCheckJobTrigger"/>-->
+                <!--<ref bean="orderReviewCheckJobTrigger"/>-->
+                <!--<ref bean="order24HoursStatusCheckJobTrigger"/>-->
+              <!--  <ref bean="cartItemNoticeJobTrigger"/>-->
+            </list>
+        </property>
+        <property name="taskExecutor" ref="executor"/>
+        <property name="autoStartup" value="true"/>
+    </bean>
+
+</beans>

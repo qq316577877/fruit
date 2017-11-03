@@ -1,0 +1,111 @@
+#loanCollect td {
+    width: 120px;
+    text-align: right;
+}
+
+#loanCollect tr > td:nth-of-type(2),
+#loanCollect tr > td:nth-of-type(4),
+#loanCollect tr > td:nth-of-type(6) {
+    text-align: left;
+    margin-right: 20px;
+}
+
+#thisForm {
+    margin-top: 10px;
+}
+
+#creditInfo > span {
+    width: 120px;
+    text-align: right;
+    display: inline-block;
+}
+
+#creditInfo > span:nth-of-type(2),
+#creditInfo > span:nth-of-type(4),
+#creditInfo > span:nth-of-type(6) {
+    text-align: left;
+}
+
+#pdf1 embed {
+    width: 650px;
+    height: 550px
+}
+
+#pdf1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -413px;
+    /*top: 5%;*/
+}
+
+#mask,
+#maskSign {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .5s;
+    background: rgba(0, 0, 0, .4);
+    z-index: 50;
+    display: none;
+}
+
+#btnCan {
+    position: absolute;
+    left: 50%;
+    bottom: 60px;
+    margin-left: -50px;
+    width: 100px;
+    height: 30px;
+}
+
+#pop {
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 30%;
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.userInfo {
+    margin-top: 20px;
+}
+
+.userInfo .userName {
+    display: inline-block;
+}
+
+#seeCont {
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    text-shadow: none;
+    background-color: #4d90fe;
+}
+#closeBut {
+    position: absolute;
+    top: 90%;
+    left: 45%;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    width: 80px;
+    display: block;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+
+
+

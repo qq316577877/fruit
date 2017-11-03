@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api name="/item/explosive/event/save_ajax" allowExtra="true">
+    <parameters>
+        <parameter name="id" type="int" minValue="0" default="0"/>
+        <parameter name="title" type="html_string" minLength="0" maxLength="64" default="" required="true"/>
+        <parameter name="expireTime" type="html_string" minLength="10" maxLength="19" default="0001-01-01 00:00:00"/>
+        <parameter name="priority" type="int" minValue="0" default="0" required="true"/>
+        <parameter name="memo" type="html_string" minLength="0" maxLength="64" default=""/>
+        <parameter name="bannerPicUrl" type="html_string" minLength="0" maxLength="256" default=""/>
+        <parameter name="smallPicUrl" type="html_string" minLength="0" maxLength="256" default=""/>
+        <parameter name="h5HomePicUrl" type="html_string" minLength="0" maxLength="256" default=""/>
+        <parameter name="description" type="html_string" minLength="0" maxLength="256" default=""/>
+    </parameters>
+    <rules/>
+    <customValidators/>
+</api>

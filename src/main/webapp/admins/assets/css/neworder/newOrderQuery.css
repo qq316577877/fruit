@@ -1,0 +1,1038 @@
+/*main*/
+/*top*/
+*{
+    font-family: "宋体";!important;
+}
+.main .main-l ul:nth-of-type(1) li:nth-of-type(2) a {
+
+}
+
+.main-l > ul:nth-of-type(4) li:nth-of-type(1) a {
+
+}
+
+.query-head {
+    width: 100%;
+    height: 40px;
+    border-bottom: 2px solid #d5d5d5;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.query-head li {
+    height: 40px;
+    float: left;
+    width: 104px;
+    cursor: pointer;
+    font-size: 16px;
+    /*color: #333333;*/
+    font-weight: bold;
+    /*font-family: Arial;*/
+    text-align: center;
+}
+
+
+.tabCurrent{
+    color: #00AA5C;
+    border-bottom: 2px solid #00AA5C;
+}
+.filtrate-day {
+    line-height: 30px;
+}
+
+.filtrate-day span{
+    width: 45px;
+    font-size: 14px;
+    color: #333333;
+    margin-right: 10px;
+}
+
+.order-search span {
+    margin-top:5px;
+    width: 45px;
+    font-size: 14px;
+    color: #333333;
+    margin-right: 10px;
+}
+
+.filtrate-day ul {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.filtrate-day ul li {
+    float: left;
+    margin-right: 24px;
+    cursor: pointer;
+}
+
+.custom input {
+    border: 1px solid #DDDDDD;
+    width: 96px;
+    height: 30px;
+}
+
+#day_1, #day_2 {
+    color: #cccccc;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.order-search {
+    margin-top: 16px;
+    margin-bottom: 20px;
+}
+
+.order-search input {
+    width: 304px;
+    height: 32px;
+    border: 1px solid #DDDDDD;
+    padding-left: 10px;
+}
+
+.order-search button {
+    width: 96px;
+    height: 32px;
+    background: #00aa5c;
+    color: #ffffff;
+    margin-left: -5px;
+}
+
+.filtrate-day li:hover {
+    color: #00aa5c;
+    text-decoration: underline;
+}
+
+.order-head {
+    width: 100%;
+    height: 40px;
+    background: #f5f5f5;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 16px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.order-head li:nth-of-type(7){
+    width: 145px;
+}
+#orderList table tr td{
+    text-align: center;
+}
+#orderList table tr td:nth-of-type(7){
+    width: 145px;
+}
+.order-head li ,
+#orderList table tr td
+{
+    float: left;
+    height: 40px;
+    width: 132px;
+}
+#orderList table tr td:last-of-type a{
+    display: block;
+}
+.order-head li:nth-of-type(3),
+#orderList table tr td:nth-of-type(3)
+{
+    width: 132px;
+}
+.order-head li:nth-of-type(4),
+#orderList table tr td:nth-of-type(4)
+{
+    width: 80px;
+}
+
+.order-head li:nth-of-type(5) ,
+#orderList table tr td:nth-of-type(5){
+    margin-left: 20px;
+    width: 152px;
+}
+
+.order-head li:nth-of-type(6),
+#orderList table tr td:nth-of-type(6) {
+    width: 120px;
+}
+#orderList table{
+    /*border-bottom: 1px solid #eee;*/
+    margin-bottom: 20px;
+}
+.ctrl-btn {
+    width: 150px;
+    position: relative;
+    right: -920px;
+    margin-bottom: 16px;
+}
+
+.ctrl-btn button {
+    width: 62px;
+    height: 26px;
+    line-height: 26px;
+    background: #fff;
+    font-size: 12px;
+    color: #333;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+}
+
+.ctrl-btn button:hover {
+    color: #00aa5c;
+    border: 1px solid #00aa5c;
+    transition: all .5s;
+}
+
+/*订单列表*/
+.order-list {
+    width: 100%;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.list_1 {
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    margin-bottom: 20px;
+}
+
+.list_1_head {
+    height: 40px;
+    background: rgb(231, 249, 241);
+    padding-left: 10px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.list_1_head input {
+    width: 14px;
+    height: 14px;
+    margin-top: 13px;
+}
+
+.list_1_head > span:nth-of-type(1) {
+    font-size: 14px;
+    color: #333333;
+    margin-right: 40px;
+}
+
+.order-hao {
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.order-hao span {
+    font-size: 14px;
+    color: #999;
+}
+
+.list_1 .cancel {
+    float: right;
+    margin-right: 10px;
+    color: #999;
+}
+
+.list_1 .list_1_body table td {
+    height: 40px;
+    display: inline-block;
+    width: 152px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.list_1 .list_1_body table tr td:nth-of-type(3) {
+    width: 130px;
+}
+
+.list_1 .list_1_body table tr td:nth-of-type(4) {
+    color: #00aa5c;
+}
+
+.list_1 .list_1_body table tr td:nth-of-type(5) {
+    width: 119px;
+}
+
+.list_1 .list_1_body table tr {
+
+}
+
+.list_1 .list_1_body table tr td:nth-of-type(6) {
+    width: 120px;
+    border-bottom: none;
+}
+
+.list_1 .list_1_body table tr td:nth-of-type(7) {
+    border-bottom: none;
+}
+
+.order-details div {
+    cursor: pointer;
+    z-index: 99;
+    text-align: center;
+}
+
+.order-details div:nth-of-type(2):hover {
+    color: #00aa5c;
+    text-decoration: underline;
+}
+
+.order-details div:nth-of-type(1) {
+    font-size: 14px;
+    color: #999999;
+}
+
+.order-ctrl {
+    text-align: center;
+}
+
+.order-ctrl a:nth-of-type(1) {
+    width: 80px;
+    height: 24px;
+    background: #00aa5c;
+    color: #ffffff;
+    border-radius: 2px;
+    display: block;
+    line-height: 24px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.order-ctrl a:nth-of-type(2) {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.list_1_body table tr:last-of-type td {
+    border-bottom: none;
+}
+.orderDetails,.Advance,.prepaid{
+    color: #00AA5C;
+}
+
+#Pagination {
+    float: right;
+    margin-right: 165px;
+    margin-top: 120px;
+}
+
+#Pagination a:hover {
+    transition: all .5s;
+    border: 1px solid #00aa5c;
+    color: #00aa5c;
+}
+
+#Searchresult {
+    height: 550px;
+}
+
+#Searchresult table tbody {
+    /*border: 1px solid #DDDDDD;*/
+    border-right: none;
+}
+
+#Searchresult table tbody tr:nth-of-type(1) td:last-of-type {
+    margin-right: -3px;
+}
+
+#Pagination .prev,
+#Pagination .next {
+    font-family: Consolas;
+}
+
+.pagination a {
+    text-decoration: none;
+}
+
+.pagination a, .pagination span {
+    display: inline-block;
+    margin-right: 8px;
+    /*margin-bottom: 5px;*/
+    border: 1px solid #d5d5d5;
+    color: #666;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.pagination .current {
+    background: #00aa5c;
+    color: #fff;
+    border: 1px solid #00aa5c;
+}
+
+.pagination .current.prev, .pagination .current.next {
+    color: #d5d5d5;
+    border-color: #d5d5d5;
+    background: #fff;
+}
+
+#Searchresult {
+    /*margin-top: 16px;*/
+}
+
+.f-bottom {
+    margin-top: 200px;
+}
+
+#day_3 {
+    background: #00aa5c;
+    color: #ffffff;
+}
+
+.noData {
+    margin-top: 32px;
+    text-align: center;
+    color: #666666;
+    display: none;
+}
+
+.noData .order-icon1 {
+    font-size: 56px;
+    color: #666666;
+}
+
+.noData-btn input {
+    width: 90px;
+    height: 24px;
+    border: 1px solid #00aa5c;
+    color: #00aa5c;
+    border-radius: 3px;
+    font-size: 12px;
+    background: #fff;
+}
+
+.noData-btn input:nth-of-type(1) {
+    margin-top: 30px;
+}
+
+.noData-btn input:hover {
+    background: #00aa5c;
+    color: #fff;
+    transition: all .5s;
+}
+
+.prdStatus a {
+    margin-left: 10px;
+    color: #00aa5c;
+
+}
+
+.prdStatus a:hover {
+    text-decoration: underline;
+}
+
+
+
+#logistics {
+    width: 680px;
+    height: 672px;
+    background: #fff;
+    border-radius: 15px;
+    margin: 30px auto;
+}
+
+.inform-head {
+    width: 100%;
+    height: 40px;
+    background: #f2f2f2;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+    line-height: 40px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+#logistics .inform-body {
+    padding: 24px 40px;
+    padding-left: 40px;
+    height: 629px;
+}
+
+#logistics .inform-down {
+    height: 435px;
+    overflow: auto;
+}
+
+.inform-top1 {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 16px;
+}
+
+.inform-top1 span {
+    margin-left: 8px;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.inform-top1 .company {
+    font-size: 14px;
+    color: #555555;
+    font-weight: normal;
+}
+
+.inform-down {
+    margin-top: 24px;
+}
+
+.down-head {
+    font-size: 16px;
+    color: #333333;
+    font-weight: bold;
+    padding-bottom: 8px;
+    display: block;
+    border-bottom: 1px solid #DDDDDD;
+    margin-bottom: 20px;
+}
+
+.logistics-details {
+    margin-bottom: 16px;
+}
+#orderList table tr {
+    height: 60px;
+    line-height: 60px;!important;
+    border-bottom: 1px solid #eee;
+    display: block;
+    margin-bottom: 20px;
+}
+.logistics-details .date {
+    margin-right: 16px;
+}
+#orderList .doubleHeight div{
+    height: 30px;
+    line-height: 30px;
+}
+#orderList .doubleHeight a{
+    height: 30px;
+    line-height: 30px;
+    display: block;
+}
+.logistics-details .time {
+    margin-right: 32px;
+}
+
+.logistics-details .img2 {
+    width: 110px;
+    height: 80px;
+    margin-left: 180px;
+    margin-top: 10px;
+}
+
+.logistics-details .img2 img {
+    display: block;
+}
+
+#inform-body {
+    height: 629px;
+}
+
+#orderDetails1 a {
+    font-size: 14px;
+    color: #333333;
+}
+
+#orderDetails1 a:hover {
+    color: #00aa5c;
+}
+.pageDiv .prevPage,.pageDiv .nextPage,
+.pageDiv1 .prevPage,.pageDiv1 .nextPage,
+.pageDiv2 .prevPage,.pageDiv2 .nextPage,
+.pageDiv3 .prevPage,.pageDiv3 .nextPage,
+.pageDiv4 .prevPage,.pageDiv4 .nextPage
+.pageDiv5 .prevPage,.pageDiv5 .nextPage
+{
+    display: inline-block;
+    color: #4c4c4c;
+    background: #f6fbf9;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    line-height: 35px;
+    /*padding: 3px 18px;*/
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 8px;
+}
+.pageDiv, .pageDiv1, .pageDiv2, .pageDiv3, .pageDiv4, .pageDiv5 {
+    padding: 15px 20px;
+    text-align: right;
+    color: #ccc;
+    clear: both;
+    font-family: serif;
+    font-weight: bold;
+}
+
+.pageDiv span,
+.pageDiv1 span,
+.pageDiv2 span,
+.pageDiv3 span,
+.pageDiv4 span,
+.pageDiv5 span {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+.pageDiv span.current
+.pageDiv1 span.current,
+.pageDiv2 span.current,
+.pageDiv3 span.current,
+.pageDiv4 span.current,
+.pageDiv5 span.current
+{
+    border: 1px solid #DDDDDD;
+    display: inline-block;
+    margin-right: 8px;
+    width: 34px;
+    height: 34px;
+}
+
+.pageDiv a, .pageDiv span,
+.pageDiv1 a, .pageDiv1 span,
+.pageDiv2 a, .pageDiv2 span,
+.pageDiv3 a, .pageDiv3 span,
+.pageDiv4 a, .pageDiv4 span,
+.pageDiv5 a, .pageDiv5 span
+{
+    margin-right: 8px;
+    text-align: center;
+}
+
+.pageDiv a.tcdNumber,
+.pageDiv1 a.tcdNumber,
+.pageDiv2 a.tcdNumber,
+.pageDiv3 a.tcdNumber,
+.pageDiv4 a.tcdNumber,
+.pageDiv5 a.tcdNumber
+{
+    display: inline-block;
+    color: #4c4c4c;
+    background: #f6fbf9;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    line-height: 35px;
+    /*padding: 3px 18px;*/
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+.pageDiv a:hover,
+.pageDiv1 a:hover,
+.pageDiv2 a:hover,
+.pageDiv3 a:hover,
+.pageDiv4 a:hover,
+.pageDiv5 a:hover
+{
+    background: #00AA5C;
+    border: 1px solid #00AA5C;
+    transition: all .5s;
+    color: #fff;
+}
+
+.pageDiv span.disabled,
+.pageDiv1 span.disabled,
+.pageDiv2 span.disabled,
+.pageDiv3 span.disabled,
+.pageDiv4 span.disabled,
+.pageDiv5 span.disabled
+{
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    color: #bfbfbf;
+    background: #f2f2f2;
+    border: 1px solid #bfbfbf;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.pageDiv span.pagecount,
+.pageDiv1 span.pagecount,
+.pageDiv2 span.pagecount,
+.pageDiv3 span.pagecount,
+.pageDiv4 span.pagecount,
+.pageDiv5 span.pagecount
+{
+    /*padding: 0 10px;*/
+    font-size: 14px;
+    color: #999999;
+    /*margin-right: -30px;*/
+    width: 60px;
+    display: inline-block;
+}
+
+.pageDiv span.countYe,
+.pageDiv1 span.countYe,
+.pageDiv2 span.countYe,
+.pageDiv3 span.countYe,
+.pageDiv4 span.countYe,
+.pageDiv5 span.countYe
+{
+    color: #4C4C4C;
+    font-size: 14px;
+    margin-left: 30px;
+}
+
+.pageDiv span.countYe input,
+.pageDiv1 span.countYe input,
+.pageDiv2 span.countYe input,
+.pageDiv3 span.countYe input,
+.pageDiv4 span.countYe input,
+.pageDiv5 span.countYe input
+{
+    outline: none;
+    border: 1px solid #ddd;
+    height: 25px;
+    padding: 3px 10px;
+    width: 25px;
+    margin: 0 5px;
+}
+
+.pageDiv a.turndown,
+.pageDiv1 a.turndown,
+.pageDiv2 a.turndown,
+.pageDiv3 a.turndown,
+.pageDiv4 a.turndown,
+.pageDiv5 a.turndown
+{
+    padding: 3px 10px;
+}
+
+.pageDiv span.disabled,
+.pageDiv1 span.disabled,
+.pageDiv2 span.disabled,
+.pageDiv3 span.disabled,
+.pageDiv4 span.disabled,
+.pageDiv5 span.disabled
+{
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+}
+
+/*取消弹窗*/
+#inform-cancle {
+    width: 300px;
+    height: 200px;
+    background: #fff;
+    margin: 250px auto;
+    border-radius: 10px;
+    margin-top: 120px;
+}
+
+#inform-cancle .info {
+    font-size: 20px;
+    color: #00aa5c;
+    margin-top: 50px;
+    text-align: center;
+    display: block;
+    line-height: 5;
+}
+
+#inform-cancle .can-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#inform-cancle .can-btn button {
+    width: 60px;
+    height: 30px;
+    background: #00aa5c;
+    color: #fff;
+    border-radius: 5px;
+
+}
+
+#btn-1 {
+    margin-right: 20px;
+}
+
+.mask #inform-insured{
+    width: 400px;
+    /*height: 200px;*/
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 50%;
+    margin-top: -100px;
+    padding: 40px;
+    border-radius: 20px;
+    display: block;
+}
+#inform-insured .head h4{
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+}
+#inform-insured .head h4:nth-of-type(1){
+    margin-right: 68px;
+}
+.orderNo{
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 40px;
+}
+.orderNo input{
+    width: 150px;
+    height: 25px;
+    border: 1px solid #cccccc;
+    margin-left: 35px;
+}
+#inform-insured .can-btn{
+    text-align: center;
+    margin-top: 10px;
+}
+#inform-insured .can-btn button{
+    width: 80px;
+    height: 30px;
+    background: #00AA5C;
+    color:#fff;
+}
+
+
+/*取消弹窗*/
+#inform-3 {
+    width: 300px;
+    height: 200px;
+    background: #fff;
+    margin: 250px auto;
+    border-radius: 10px;
+}
+
+#inform-3 .info {
+    font-size: 20px;
+    color: #00aa5c;
+    margin-top: 50px;
+    text-align: center;
+    display: block;
+    line-height: 5;
+}
+
+#inform-3 .can-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#inform-3 .can-btn button {
+    width: 60px;
+    height: 30px;
+    background: #00aa5c;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.delivery {
+   cursor: pointer;
+    font-size: 14px;
+    color: #333333;
+}
+
+#inform-remark{
+    text-align: center;
+    width: 400px;
+    background: #fff;
+    height: 210px;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 50%;
+    margin-top: -105px;
+}
+#inform-remark h2{
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+}
+#inform-remark span{
+    text-align: center;
+    display: inline-block;
+    /*margin-left: 70px;*/
+}
+#inform-remark h3{
+    font-size: 16px;
+    text-align: center;
+}
+#inform-remark .can-btn{
+    text-align: center;
+    margin-top: 20px;
+}
+
+#inform-remark .can-btn button {
+    width: 60px;
+    height: 30px;
+    background: #00aa5c;
+    color: #fff;
+    border-radius: 5px;
+}
+#inform-remark textarea{
+    /*margin-left: 70px;*/
+}
+
+.list_1_head{
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+#inform-remark #btn-7{
+    margin-right: 10px;
+}
+
+#inform-remark .orderNo{
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 12px;
+}
+
+
+.selected {
+    color: #00AA5C;
+}
+
+.list_1 .list_1_body table tr {
+    height: 40px;
+    display: block;
+}
+
+
+.pageDisable{
+    line-height: 34px;
+    color: #bfbfbf;
+    background: #f2f2f2;
+    border: 1px solid #bfbfbf;
+    margin-right: 8px;
+}
+
+
+#orderSea:hover,
+#day_3:hover{
+    transition: all .3s;
+    background: #10c471;
+}
+
+/*mask*/
+#listMask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .5s;
+    background: rgba(0, 0, 0, .4);
+    z-index: 50;
+    display: none;
+}
+
+#advince,
+#prepaid
+{
+    width: 400px;
+    height: 300px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 10%;
+    border-radius: 10px;
+    padding: 30px;
+}
+#advince h4,
+#prepaid h4{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+#advince label span,
+#prepaid label span
+{
+    width: 120px;
+    text-align: right;
+    display: inline-block;
+}
+#advince label input,
+#prepaid label input
+{
+    border: 1px solid #999;
+    width: 147px;
+}
+#advince label:first-of-type,
+#prepaid label:first-of-type
+{
+    margin-bottom: 20px;
+}
+#advince label textarea,
+#prepaid label textarea
+{
+    border-color: #999;
+}
+#advince .btnClass,
+#prepaid .btnClass
+{
+    text-align: center;
+    margin-top: 20px;
+}
+#advince .btnClass input ,
+#prepaid .btnClass input
+{
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #00AA5C;
+    color: #fff;
+}
+#advince #collectCancel,
+#prepaid #collectCancel
+{
+    background: #fff;
+    color: #00AA5C;
+    border: 1px solid #00AA5C;
+    margin-left: 20px;
+}
+#cancelPop{
+    width: 300px;
+    height: 200px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    padding: 50px;
+    border-radius: 10px;
+    top: 30%;
+}
+#cancelPop .canBtn{
+    text-align: center;
+}
+#cancelPop h3{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+#cancelPop .canBtn input{
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    background: #00AA5C;
+    color: #fff;
+}
+#cancelPop .canBtn  #canBtnOrder{
+    background: #fff;
+    color: #00AA5C;
+    border: 1px solid #00AA5C;
+    margin-left: 20px;
+}
